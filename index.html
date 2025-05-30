@@ -9,10 +9,16 @@
   <meta name="description" content="OMNI é uma produtora audiovisual de Porto Velho especializada em contar histórias com imagem e som. Veja portfólio, serviços e entre em contato.">
   <meta name="author" content="OMNI Audiovisual">
   <meta name="robots" content="index, follow">
+
+  <!-- Open Graph Meta Tags -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 
+  <!-- AOS Animation CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
 </head>
+
+
 <body>
 
   <header>
@@ -36,14 +42,14 @@
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero" data-aos="fade-in">
       <div class="hero-content">
         <h2>OMNI</h2>
         <p>Transformamos ideias em experiências visuais.</p>
       </div>
     </section>
 
-    <section id="sobre">
+    <section id="sobre" data-aos="fade-right">
       <h2>Sobre a OMNI</h2>
       <p>A OMNI é uma produtora audiovisual independente com sede em Porto Velho (RO), especializada em contar histórias através da imagem. Unimos criatividade, técnica e propósito para criar experiências visuais marcantes.</p>
     </section>
@@ -64,24 +70,24 @@
     </section>
 
 
-  <section>
+  <section id="portfolio" data-aos="fade-up">
       <h2>Portfólio</h2>
       <p>Conheça alguns dos nossos projetos mais recentes:</p>
       
       <div class="portfolio-grid">
-        <div class="portfolio-item">
+        <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="100">
           <img src="assets/img/video1-thumbnail.jpg" alt="Vídeo 1" />
           <h4>Documentário: Vozes da Cidade</h4>
           <p>Um retrato sensível da vida urbana em Porto Velho.</p>
         </div>
 
-        <div class="portfolio-item">
+        <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="200">
           <img src="assets/img/video2-thumbnail.jpg" alt="Vídeo 2" />
           <h4>Clipe: Luzes na Madrugada</h4>
           <p>Estética noturna para uma narrativa musical independente.</p>
         </div>
 
-        <div class="portfolio-item">
+        <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="300">
           <img src="assets/img/video3-thumbnail.jpg" alt="Vídeo 3" />
           <h4>Campanha: Movimento pela Leitura</h4>
           <p>Produção institucional para uma ONG regional.</p>
@@ -89,34 +95,34 @@
       </div>
     </section>
 
-    <section>
+    <section id="servicos" data-aos="fade-up">
       <h2>O que fazemos</h2>
       <p>Conheça os principais serviços oferecidos pela OMNI:</p>
 
       <div class="services-grid">
-        <div class="service-item">
+        <div class="service-item" data-aos="zoom-in" data-aos-delay="100">
           <h3>Produção de Vídeos</h3>
           <p>Roteiro, filmagem e edição de vídeos institucionais, documentais e criativos.</p>
         </div>
 
-        <div class="service-item">
+        <div class="service-item" data-aos="zoom-in" data-aos-delay="200">
           <h3>Fotografia Profissional</h3>
           <p>Ensaios, eventos, cobertura fotográfica e fotografia de produto.</p>
         </div>
 
-        <div class="service-item">
+        <div class="service-item" data-aos="zoom-in" data-aos-delay="300">
           <h3>Clipes Musicais</h3>
           <p>Criação visual para artistas independentes e gravadoras com linguagem única.</p>
         </div>
 
-        <div class="service-item">
+        <div class="service-item" data-aos="zoom-in" data-aos-delay="400">
           <h3>Eventos e Transmissões</h3>
           <p>Captação audiovisual de eventos e transmissões ao vivo com qualidade profissional.</p>
         </div>
       </div>
     </section>
 
-    <section>
+    <section id="contato" data-aos="fade-up">
       <h2>Fale com a gente</h2>
       <p>Preencha o formulário abaixo ou entre em contato diretamente pelo WhatsApp.</p>
 
@@ -145,7 +151,28 @@
     <p>© 2025 OMNI Audiovisual. Todos os direitos reservados.</p>
   </footer>
 
+// Scripts
+
+<!-- jQuery -->
 <script src="scripts/main.js"></script>
+
+<!-- AOS Animation JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+
+// WhatsApp Button
+<a href="https://wa.me/5569992282458" class="whatsapp-float" target="_blank" aria-label="Fale conosco pelo WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28" fill="white">
+    <path d="M16 .396C7.16.396 0 7.556 0 16.396c0 2.883.765 5.704 2.21 8.188L0 32l7.567-2.188a15.964 15.964 0 008.433 2.388c8.84 0 16-7.16 16-16.004S24.84.396 16 .396zm0 29.188a13.066 13.066 0 01-6.594-1.77l-.473-.28-4.49 1.3 1.293-4.373-.307-.493a13.046 13.046 0 01-2.025-6.997c0-7.2 5.867-13.066 13.066-13.066 7.2 0 13.067 5.867 13.067 13.066S23.2 29.584 16 29.584zm7.388-9.622c-.394-.197-2.32-1.145-2.68-1.278-.36-.132-.62-.197-.88.197-.263.394-1.01 1.278-1.24 1.541-.228.263-.457.296-.85.1-.394-.197-1.666-.614-3.172-1.96-1.172-1.045-1.96-2.332-2.188-2.726-.228-.394-.024-.606.172-.802.176-.175.394-.457.59-.685.197-.228.263-.394.394-.657.132-.263.065-.493-.033-.685-.1-.197-.88-2.12-1.207-2.905-.317-.765-.64-.66-.88-.67l-.75-.013c-.263 0-.684.1-1.04.493s-1.37 1.337-1.37 3.264 1.403 3.78 1.6 4.045c.197.263 2.76 4.214 6.69 5.91.935.403 1.664.642 2.23.822.937.297 1.79.255 2.464.155.75-.11 2.32-.95 2.646-1.866.326-.914.326-1.7.228-1.866-.1-.165-.36-.263-.754-.46z"/>
+  </svg>
+</a>
+
+// Scroll to Top Button
+<button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" id="scrollTopBtn" title="Voltar ao topo">↑</button>
+
 
 </body>
 </html>
