@@ -1,12 +1,12 @@
+/* ========================
+   GLOBAL STYLES
+   ======================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ========================
-   GLOBAL STYLES
-   ======================== */
 body {
   font-family: 'Inter', sans-serif;
   background-color: #f9f9f9;
@@ -37,10 +37,15 @@ html {
   }
 
   .nav-links {
+    display: none;
     flex-direction: column;
     width: 100%;
-    gap: 0.5rem;
+    gap: 0;
     margin-top: 1rem;
+  }
+
+  .nav-links.show {
+    display: flex;
   }
 
   .nav-links a {
@@ -54,11 +59,18 @@ html {
     padding: 1rem;
   }
 
+  body {
+    color: #111;
+  }
   .portfolio-grid,
   .services-grid {
     grid-template-columns: 1fr;
   }
-
+  
+  .portfolio-item p,
+  .service-item p {
+    color: #333;
+  }
   .contact-form {
     width: 100%;
   }
@@ -67,7 +79,14 @@ html {
     font-size: 0.8rem;
     padding: 1rem;
   }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
 }
+
+
 
 /* Header */
 header {
@@ -107,6 +126,7 @@ header .container {
 
 .nav-links a:hover {
   text-decoration: underline;
+  color: #16a07d;
 }
 
 /* Hamburguer Button */
@@ -118,31 +138,6 @@ header .container {
   color: white;
   cursor: pointer;
 }
-
-/* Mobile only */
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    gap: 0;
-    margin-top: 1rem;
-  }
-
-  .nav-links.show {
-    display: flex;
-  }
-
-  .nav-links a {
-    padding: 0.75rem 0;
-    border-bottom: 1px solid #333;
-  }
-}
-
 
 /* Main and Footer */
 main {
@@ -221,9 +216,7 @@ main p {
   font-weight: 400;
 }
 
-
 /* Portolio Section */
-
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -256,7 +249,6 @@ main p {
 }
 
 /* Services Section */
-
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -285,7 +277,6 @@ main p {
 }
 
 /* Contact Section */
-
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -316,10 +307,18 @@ main p {
   border-radius: 6px;
   cursor: pointer;
   font-size: 1rem;
+  transition:background-color 0.3s ease;
 }
 
 .contact-form button:hover {
   background-color: #444;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form button:focus {
+  outline: 2px solid #16a07d;
+  outline-offset: 2px;
 }
 
 /* Whatsapp Floating Button */
@@ -336,4 +335,44 @@ main p {
   z-index: 999;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   text-decoration: none;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+/*Scroll to Top Button */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  display: none;
+  background-color: #000;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 0.6rem 1rem;
+  font-size: 1.4rem;
+  cursor: pointer;
+  z-index: 998;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease;
+}
+
+#scrollTopBtn:hover {
+  background-color: #444;
+  transform: scale(1.1);
+}
+
+/*Wave separator */
+.wave-separator {
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave-separator svg {
+  display: block;
+  width: 100%;
+  height: 60px;
 }
