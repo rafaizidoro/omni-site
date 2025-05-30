@@ -3,27 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sobre a OMNI</title>
+  <title>OMNI - Produtora Audiovisual</title>
   <link rel="stylesheet" href="styles/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="description" content="OMNI é uma produtora audiovisual de Porto Velho especializada em contar histórias com imagem e som. Veja portfólio, serviços e entre em contato.">
+  <meta name="author" content="OMNI Audiovisual">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+
 </head>
 <body>
+
   <header>
     <div class="container">
       <h1 class="logo">OMNI</h1>
-      <nav>
+
+      <button class="hamburger" id="hamburger">&#9776;</button>
+      
+      <nav id="navMenu">
         <ul class="nav-links">
-          <li><a href="index.html">Início</a></li>
-          <li><a href="about.html">Sobre</a></li>
-          <li><a href="portfolio.html">Portfólio</a></li>
-          <li><a href="services.html">Serviços</a></li>
-          <li><a href="contact.html">Contato</a></li>
+          <li><a href="#home">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#portfolio">Portfólio</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
+
     </div>
+    
   </header>
 
   <main>
-    <section>
+    <section class="hero">
+      <div class="hero-content">
+        <h2>OMNI</h2>
+        <p>Transformamos ideias em experiências visuais.</p>
+      </div>
+    </section>
+
+    <section id="sobre">
       <h2>Sobre a OMNI</h2>
       <p>A OMNI é uma produtora audiovisual independente com sede em Porto Velho (RO), especializada em contar histórias através da imagem. Unimos criatividade, técnica e propósito para criar experiências visuais marcantes.</p>
     </section>
@@ -116,7 +136,7 @@
         <button type="submit">Enviar</button>
       </form>
 
-      <p>Ou, se preferir, fale direto no <a href="https://wa.me/5569992282458" target="_blank">WhatsApp</a>.</p>
+      <p>Ou, se preferir, fale direto no <a href="https://wa.me/5569992282458" target="_blank">WhatsApp</a> (Hugo Borges).</p>
     </section>
 
   </main>
@@ -125,7 +145,7 @@
     <p>© 2025 OMNI Audiovisual. Todos os direitos reservados.</p>
   </footer>
 
-  <script src="scripts/main.js"></script>
+<script src="scripts/main.js"></script>
 
 </body>
 </html>
