@@ -56,7 +56,7 @@
     </section>
 
     <!-- Sobre Section-->
-    <section id="sobre" data-aos="fade-right">
+    <section id="sobre" data-aos="fade-right" data-aos-duration="800">
       <h2>Sobre a OMNI</h2>
       <p>A OMNI é uma produtora audiovisual independente com sede em Porto Velho (RO), especializada em conteúdos artísticos e culturais. Unimos criatividade e qualidade técnica com propósito.</p>
       
@@ -65,15 +65,8 @@
        
     </section>
 
-  <!-- Wave Separator -->
-  <div class="wave-separator">
-    <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,0 C720,100 720,0 1440,100 L1440,0 L0,0 Z" fill="#ffffff"></path>
-    </svg>
-  </div>
-
-<!-- Portfolio Section-->
-    <section id="portfolio" data-aos="fade-up">
+    <!-- Portfolio Section-->
+    <section id="portfolio" data-aos="fade-up" data-aos-duration="800">
       <h2>Portfólio</h2>
       <p>Conheça alguns dos nossos projetos mais recentes:</p>
       
@@ -84,7 +77,7 @@
           <p>Um retrato sensível da vida urbana em Porto Velho.</p>
         </div>
 
-        <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="200">
+         <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="700">
           <img src="assets/img/video2-thumbnail.jpg" alt="Vídeo 2" />
           <h4>Clipe: Luzes na Madrugada</h4>
           <p>Estética noturna para uma narrativa musical independente.</p>
@@ -98,20 +91,13 @@
       </div>
     </section>
 
-  <!-- Wave Separator -->
-  <div class="wave-separator">
-    <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,0 C720,100 720,0 1440,100 L1440,0 L0,0 Z" fill="#ffffff"></path>
-    </svg>
-  </div>
-
     <!-- Serviços Section -->
-    <section id="servicos" data-aos="fade-up">
+    <section id="servicos" data-aos="fade-up" data-aos-duration="800">
       <h2>O que fazemos</h2>
       <p>Conheça os principais serviços oferecidos pela OMNI:</p>
 
       <div class="services-grid">
-        <div class="service-item" data-aos="zoom-in" data-aos-delay="100">
+        <div class="service-item" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="700">
           <h3>Produção de Vídeos</h3>
           <p>Roteiro, filmagem e edição de vídeos institucionais, documentais e criativos.</p>
         </div>
@@ -133,15 +119,8 @@
       </div>
     </section>
 
-  <!-- Wave Separator -->
-  <div class="wave-separator">
-    <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,0 C720,100 720,0 1440,100 L1440,0 L0,0 Z" fill="#ffffff"></path>
-    </svg>
-  </div>
-    
     <!-- Contato Section -->
-    <section id="contato" data-aos="fade-up">
+    <section id="contato" data-aos="fade-up" data-aos-duration="800">
       <h2>Fale com a gente</h2>
       <p>Preencha o formulário abaixo ou entre em contato diretamente pelo WhatsApp.</p>
 
@@ -178,7 +157,13 @@
   <!-- AOS Animation JS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init();
+  // Initialize AOS with custom settings
+  AOS.init({
+    duration: 800,         // Animation duration in ms
+    once: true,            // Only animate once when scrolling down
+    offset: 100,           // Trigger point before the element is in viewport
+    easing: 'ease-in-out', // Smooth easing
+  });
   </script>
 
   <!-- WhatsApp Button -->
