@@ -47,8 +47,13 @@
   <!-- Main Content -->
   <main>
     <!-- Home Section -->
-    <section id="home" class="hero" data-aos="fade-in">
-      <div class="hero-content">
+    <section id="home" class="hero-video">
+      <video autoplay muted loop playsinline class="background-video">
+        <source src="assets/video/omni-banner.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo em HTML5.
+      </video>
+
+      <div class="hero-overlay">
         <h1>OMNI</h1>
         <p>Transformamos ideias em conteúdo audiovisual.</p>
         <a href="#portfolio" class="btn">Veja nosso portfólio</a>
@@ -71,51 +76,65 @@
       <p>Conheça alguns dos nossos projetos mais recentes:</p>
       
       <div class="portfolio-grid">
+
+        <!-- Item 1 -->
         <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="100">
-          <img src="assets/img/video1-thumbnail.jpg" alt="Vídeo 1" />
-          <h4>Documentário: Vozes da Cidade</h4>
+          <a href="#" class="lightbox-trigger" data-media="assets/img/video1-full.jpg" aria-label="Abrir Vozes da Cidade">
+            <img src="assets/img/video1-thumbnail.jpg" alt="Thumb Vozes da Cidade" />
+            <h4><span class="highlight-bar">Documentário:</span> Vozes da Cidade</h4>
+          </a>
           <p>Um retrato sensível da vida urbana em Porto Velho.</p>
         </div>
 
-         <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="700">
-          <img src="assets/img/video2-thumbnail.jpg" alt="Vídeo 2" />
-          <h4>Clipe: Luzes na Madrugada</h4>
+        <!-- Item 2 -->
+        <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="200">
+          <a href="#" class="lightbox-trigger" data-media="assets/img/video2-full.jpg" aria-label="Abrir Luzes na Madrugada">
+            <img src="assets/img/video2-thumbnail.jpg" alt="Thumb Luzes na Madrugada" />
+            <h4><span class="highlight-bar">Clipe:</span> Luzes na Madrugada</h4>
+          </a>
           <p>Estética noturna para uma narrativa musical independente.</p>
         </div>
 
+        <!-- Item 3 -->
         <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="300">
-          <img src="assets/img/video3-thumbnail.jpg" alt="Vídeo 3" />
-          <h4>Campanha: Movimento pela Leitura</h4>
+          <a href="#" class="lightbox-trigger" data-media="assets/img/video3-full.jpg" aria-label="Abrir Movimento pela Leitura">
+            <img src="assets/img/video3-thumbnail.jpg" alt="Thumb Movimento pela Leitura" />
+            <h4><span class="highlight-bar">Campanha:</span> Movimento pela Leitura</h4>
+          </a>
           <p>Produção institucional para uma ONG regional.</p>
         </div>
+
       </div>
     </section>
+
 
     <!-- Serviços Section -->
     <section id="servicos" data-aos="fade-up" data-aos-duration="800">
       <h2>O que fazemos</h2>
       <p>Conheça os principais serviços oferecidos pela OMNI:</p>
 
-      <div class="services-grid">
-        <div class="service-item" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="700">
-          <h3>Produção de Vídeos</h3>
-          <p>Roteiro, filmagem e edição de vídeos institucionais, documentais e criativos.</p>
+        <div class="services-grid">
+          <div class="service-item" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="700">
+            <h3><span class="highlight-bar">Produção de Vídeos</span></h3>
+            <p>Roteiro, filmagem e edição de vídeos músicais, documentais e artísticos.</p>
+          </div>
+
+          <div class="service-item" data-aos="zoom-in" data-aos-delay="200">
+            <h3><span class="highlight-bar">Fotografia</span></h3>
+            <p>Ensaios, eventos, cobertura fotográfica e fotografia de produto.</p>
+          </div>
+
+          <div class="service-item" data-aos="zoom-in" data-aos-delay="300">
+            <h3><span class="highlight-bar">Gravações Musicais</span></h3>
+            <p>Produção, captação, mixagem e masterização de singles e álbuns.</p>
+          </div>
+
+          <div class="service-item" data-aos="zoom-in" data-aos-delay="400">
+            <h3><span class="highlight-bar">Gravações e Transmissões</span></h3>
+            <p>Captação audiovisual de eventos e transmissões ao vivo com qualidade profissional.</p>
+          </div>
         </div>
 
-        <div class="service-item" data-aos="zoom-in" data-aos-delay="200">
-          <h3>Fotografia Profissional</h3>
-          <p>Ensaios, eventos, cobertura fotográfica e fotografia de produto.</p>
-        </div>
-
-        <div class="service-item" data-aos="zoom-in" data-aos-delay="300">
-          <h3>Clipes Musicais</h3>
-          <p>Criação visual para artistas independentes e gravadoras com linguagem única.</p>
-        </div>
-
-        <div class="service-item" data-aos="zoom-in" data-aos-delay="400">
-          <h3>Eventos e Transmissões</h3>
-          <p>Captação audiovisual de eventos e transmissões ao vivo com qualidade profissional.</p>
-        </div>
       </div>
     </section>
 
@@ -140,7 +159,7 @@
         <button type="submit">Enviar</button>
       </form>
 
-      <p>Ou, se preferir, fale direto no <a href="https://wa.me/5569992282458" target="_blank">WhatsApp</a> (Hugo Borges).</p>
+      <p>Se preferir, fale direto no <a href="https://wa.me/5569992282458" target="_blank">WhatsApp</a> (Hugo Borges).</p>
     </section>
 
   </main>
@@ -175,6 +194,12 @@
 
   <!-- Scroll to Top Button -->
   <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" id="scrollTopBtn" title="Voltar ao topo">↑</button>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox-modal" class="lightbox-modal" aria-hidden="true" role="dialog">
+    <button class="lightbox-close" aria-label="Fechar">&times;</button>
+    <img src="" alt="" class="lightbox-media" />
+  </div>
 
 </body>
 </html>

@@ -1,15 +1,10 @@
 // Main JavaScript file
 console.log('OMNI website loaded');
 
-// Global variables
-const hamburger = document.getElementById("hamburger");
-const navMenu = document.querySelector("#navMenu .nav-links");
-
-// DOM Content Loaded
+// Ensure all code runs after DOM is ready
 document.addEventListener("DOMContentLoaded", () => {
+  // ====== Form Submission ======
   const form = document.getElementById("omniForm");
-
-  // Form submission
   if (form) {
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
@@ -35,42 +30,83 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Hamburguer Menu toggle
-  if (hamburger) {
+  // ====== Menu Toggle ======
+  const hamburger = document.getElementById("hamburger");
+  const navMenu = document.querySelector("#navMenu .nav-links");
+
+  if (hamburger && navMenu) {
     hamburger.addEventListener("click", () => {
       navMenu.classList.toggle("show");
     });
   }
-});
 
-// Close menu on outside click
-document.addEventListener("click", (event) => {
-  const isClickInsideMenu = navMenu && navMenu.contains(event.target);
-  const isClickHamburger = hamburger && hamburger.contains(event.target);
+  // ====== Close Menu on Outside Click ======
+  document.addEventListener("click", (event) => {
+    const isClickInsideMenu = navMenu && navMenu.contains(event.target);
+    const isClickHamburger = hamburger && hamburger.contains(event.target);
+    if (!isClickInsideMenu && !isClickHamburger && navMenu) {
+      navMenu.classList.remove("show");
+    }
+  });
 
-  if (!isClickInsideMenu && !isClickHamburger) {
-    navMenu.classList.remove("show");
-  }
-});
-
-// Scroll to top button
-window.addEventListener("scroll", () => {
+  // ====== Scroll to Top Button ======
   const btn = document.getElementById("scrollTopBtn");
-  if (window.scrollY > 300) {
-    btn.style.display = "block";
-  } else {
-    btn.style.display = "none";
-  }
-});
+  window.addEventListener("scroll", () => {
+    if (!btn) return;
+    btn.style.display = window.scrollY > 300 ? "block" : "none";
+  });
 
-// Highlight current section in the navbar while scrolling
-document.addEventListener("DOMContentLoaded", () => {
+  // ====== Lightbox Modal ======
+  const lightboxModal = document.getElementById("lightbox-modal");
+  const lightboxMedia = document.querySelector(".lightbox-media");
+  const closeBtn = document.querySelector(".lightbox-close");
+  const triggers = document.querySelectorAll(".lightbox-trigger");
+
+  if (lightboxModal && lightboxMedia && closeBtn && triggers.length > 0) {
+    triggers.forEach(trigger => {
+      trigger.addEventListener("click", (e) => {
+        e.preventDefault();
+        const src = trigger.getAttribute("data-media");
+        const alt = trigger.querySelector("img")?.getAttribute("alt") || "Imagem ampliada";
+
+        lightboxMedia.setAttribute("src", src);
+        lightboxMedia.setAttribute("alt", alt);
+        lightboxModal.classList.add("active");
+        lightboxModal.setAttribute("aria-hidden", "false");
+      });
+    });
+
+    closeBtn.addEventListener("click", () => {
+      lightboxModal.classList.remove("active");
+      lightboxModal.setAttribute("aria-hidden", "true");
+      lightboxMedia.setAttribute("src", "");
+    });
+
+    // Close on overlay click
+    lightboxModal.addEventListener("click", (e) => {
+      if (e.target === lightboxModal) {
+        lightboxModal.classList.remove("active");
+        lightboxModal.setAttribute("aria-hidden", "true");
+        lightboxMedia.setAttribute("src", "");
+      }
+    });
+
+    // Close on ESC key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && lightboxModal.classList.contains("active")) {
+        lightboxModal.classList.remove("active");
+        lightboxModal.setAttribute("aria-hidden", "true");
+        lightboxMedia.setAttribute("src", "");
+      }
+    });
+  }
+
+  // ====== Highlight Navbar Section While Scrolling ======
   const sections = document.querySelectorAll("main section");
   const navLinks = document.querySelectorAll(".nav-links a");
 
   window.addEventListener("scroll", () => {
     let current = "";
-
     sections.forEach((section) => {
       const sectionTop = section.offsetTop - 100;
       if (scrollY >= sectionTop) {

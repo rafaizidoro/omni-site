@@ -137,44 +137,62 @@ textarea:focus {
   outline-offset: 4px;
 }
 
-/* Hero Section */
-.hero {
-  background: url('../assets/img/hero-banner.jpg') center/cover no-repeat;
-  color: white;
-  text-align: center;
-  padding: 6rem 1rem;
+/* ===========================
+   Hero Section (Home)
+   =========================== */
+
+.hero-video {
+  position: relative;
+  height: 100vh; /* Use toda a altura da tela */
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 60vh;
-  position: relative;
+  text-align: center;
 }
 
-.hero::before {
-  content: "";
+.background-video {
   position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.7); /* sobreposição escura */
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  filter: brightness(0.5);
 }
 
-.hero-content {
+.hero-overlay {
   position: relative;
   z-index: 1;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+  max-width: 90%;
+  color: white;
+  text-shadow: 1px 1px 6px black;
 }
 
-.hero-content h2 {
-  color: rgb(203, 221, 236);
-  font-size: 3rem;
+.hero-overlay h1 {
+  font-size: 3.5rem;
   margin-bottom: 1rem;
-  font-weight: 600;
 }
 
-.hero-content p {
-  color: #ccc;
-  font-size: 1.25rem;
-  font-weight: 400;
+.hero-overlay p {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
 }
+
+.hero-overlay .btn {
+  background-color: #16a07d;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.hero-overlay .btn:hover {
+  background-color: #128267;
+}
+
 
 /* Portolio Section */
 .portfolio-grid {
@@ -451,3 +469,47 @@ textarea:focus {
   box-shadow: 0 10px 20px rgba(0,0,0,0.15);
   transition: all 0.3s ease-in-out;
 }
+
+/* === Lightbox Styles === */
+
+.lightbox-modal {
+  display: none;
+  position: fixed;             /* Overlay on top of everything */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.lightbox-modal.active {
+  display: flex;
+}
+
+.lightbox-media {
+  max-width: 90%;
+  max-height: 80%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+}
+
+/* Close Button */
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: #fff;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.lightbox-close:hover {
+  color: #e63946;
+}
+
