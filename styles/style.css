@@ -407,3 +407,27 @@ textarea:focus {
   display: block;
   }
 }
+
+/* Portfolio highlight bar */
+.portfolio-item h4 {
+  position: relative;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #111;
+}
+
+.portfolio-item h4 .highlight-bar {
+  display: inline-block;
+  background-color: #16a07d;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  margin-right: 0.4rem;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  transition: all 0.3s ease-in-out;
+}
