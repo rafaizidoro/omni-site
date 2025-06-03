@@ -51,6 +51,7 @@ header .container {
   font-weight: bold;
 }
 
+/* Navigation links */
 .nav-links {
   list-style: none;
   display: flex;
@@ -66,6 +67,11 @@ header .container {
 .nav-links a:hover {
   text-decoration: underline;
   color: #16a07d;
+}
+
+.nav-links a.active {
+  border-bottom: 2px solid #16a07d;
+  color: #35d9b0;
 }
 
 /* Hamburguer Button */
