@@ -198,6 +198,32 @@ textarea:focus {
   background-color: #128267;
 }
 
+/* ===========================
+   SECTION STYLES
+   =========================== */ 
+/* About Section */
+#sobre {
+  background-color: #f0f0f0;
+  padding: 2rem 1rem;
+  border-radius: 8px;
+}
+#sobre h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+#sobre h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+#sobre p {
+  max-width: 800px;
+  margin: auto;
+  font-size: 1rem;
+  color: #555;
+  text-align: center;
+}
+
+
 /* Portfolio Section */
 .portfolio-grid {
   display: grid;
