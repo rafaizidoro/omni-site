@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ====== Menu Toggle ======
   const hamburger = document.getElementById("hamburger");
   const navMenu = document.querySelector("#navMenu .nav-links");
+  const navLinks = document.querySelectorAll(".nav-links a");
 
   if (hamburger && navMenu) {
     hamburger.addEventListener("click", () => {
@@ -49,18 +50,33 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  // ✅ Close menu when clicking a nav link
+  navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("show");
+    });
+  });
+
   // ====== Scroll to Top Button ======
   const btn = document.getElementById("scrollTopBtn");
   window.addEventListener("scroll", () => {
     if (!btn) return;
-    btn.style.display = window.scrollY > 300 ? "block" : "none";
+    btn.style.display = window.scrollY > 300 ? "flex" : "none";
   });
+  
 
   // ====== Lightbox Modal ======
   const lightboxModal = document.getElementById("lightbox-modal");
   const lightboxMedia = document.querySelector(".lightbox-media");
   const closeBtn = document.querySelector(".lightbox-close");
   const triggers = document.querySelectorAll(".lightbox-trigger");
+
+  // ✅ Utility function to close lightbox
+  function closeLightbox() {
+    lightboxModal.classList.remove("active");
+    lightboxModal.setAttribute("aria-hidden", "true");
+    lightboxMedia.setAttribute("src", "");
+  }
 
   if (lightboxModal && lightboxMedia && closeBtn && triggers.length > 0) {
     triggers.forEach(trigger => {
@@ -76,34 +92,24 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    closeBtn.addEventListener("click", () => {
-      lightboxModal.classList.remove("active");
-      lightboxModal.setAttribute("aria-hidden", "true");
-      lightboxMedia.setAttribute("src", "");
-    });
+    // ✅ Use utility function on all lightbox close events
+    closeBtn.addEventListener("click", closeLightbox);
 
-    // Close on overlay click
     lightboxModal.addEventListener("click", (e) => {
       if (e.target === lightboxModal) {
-        lightboxModal.classList.remove("active");
-        lightboxModal.setAttribute("aria-hidden", "true");
-        lightboxMedia.setAttribute("src", "");
+        closeLightbox();
       }
     });
 
-    // Close on ESC key
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && lightboxModal.classList.contains("active")) {
-        lightboxModal.classList.remove("active");
-        lightboxModal.setAttribute("aria-hidden", "true");
-        lightboxMedia.setAttribute("src", "");
+        closeLightbox();
       }
     });
   }
 
   // ====== Highlight Navbar Section While Scrolling ======
   const sections = document.querySelectorAll("main section");
-  const navLinks = document.querySelectorAll(".nav-links a");
 
   window.addEventListener("scroll", () => {
     let current = "";
