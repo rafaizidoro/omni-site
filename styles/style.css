@@ -143,10 +143,16 @@ textarea:focus {
 .hero-video {
   position: relative;
   width: 100%;
-  height: 90vh;
+  aspect-ratio: 16 / 9;  /* 🧠 Mantém proporção horizontal e vertical */
   overflow: hidden;
-  margin: 0;
-  padding: 0;
+}
+
+.hero-logo {
+  max-width: 320px;
+  width: 80%;
+  height: auto;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
 }
 
 .background-video {
@@ -156,6 +162,7 @@ textarea:focus {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   z-index: 0;
   filter: brightness(0.5);
 }
@@ -163,16 +170,17 @@ textarea:focus {
 /* CENTRALLY POSITION TEXT ON HERO */
 .hero-overlay {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  color: white;
-  text-align: center;
-  text-shadow: 1px 1px 6px black;
-  padding: 0 1rem;
+  top: 0;
+  left: 0;
   width: 100%;
-  max-width: 800px;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;      /* stack logo + button */
+  align-items: center;         /* horizontal center */
+  justify-content: center;     /* vertical center */
+  text-align: center;
+  padding: 1rem;
 }
 
 .hero-overlay h1 {
@@ -191,6 +199,7 @@ textarea:focus {
   padding: 0.8rem 1.5rem;
   border-radius: 8px;
   font-weight: bold;
+  text-decoration: none;
   transition: background-color 0.3s ease;
 }
 
@@ -227,28 +236,42 @@ textarea:focus {
 /* Portfolio Section */
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
   margin-top: 2rem;
+}
+
+/* Em telas largas (≥1024px): fixa exatamente 3 por linha */
+@media (min-width: 1024px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .portfolio-item {
   background-color: #fff;
-  padding: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  padding: 1.2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   text-align: center;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
 }
 
 .portfolio-item img {
   width: 100%;
   height: auto;
-  border-radius: 4px;
+  border-radius: 6px;
+  margin-bottom: 1rem;
 }
 
 .portfolio-item h4 {
-  margin: 1rem 0 0.5rem;
   font-size: 1.1rem;
+  margin-bottom: 0.5rem;
 }
 
 .portfolio-item p {
@@ -285,30 +308,76 @@ textarea:focus {
   color: #555;
 }
 
-/* Contact Section */
+/* Grid of service cards */
+.services-grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Individual service card */
+.service-card {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.service-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+
+/* ===========================
+   CONTACT SECTION STYLES
+   =========================== */
+
+/* Base form container */
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.6rem;
   max-width: 600px;
-  margin: 2rem 0;
+  margin: 1.5rem 0;
   text-align: left;
 }
 
+/* Form labels */
 .contact-form label {
   font-weight: bold;
   color: #333;
+  margin-bottom: 0.1rem;
+  display: block;
 }
 
+/* Inputs and textarea */
 .contact-form input,
-.contact-form textarea {
+.contact-form textarea,
+.contact-form select {
   width: 100%;
-  padding: 0.8rem;
+  padding: 0.6rem;
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 1rem;
+  background-color: #fff;
 }
 
+/* Submit button */
 .contact-form button {
   align-self: flex-start;
   background-color: #000;
@@ -325,27 +394,83 @@ textarea:focus {
   background-color: #444;
 }
 
+/* Focus styles for accessibility */
 .contact-form input:focus,
 .contact-form textarea:focus,
+.contact-form select:focus,
 .contact-form button:focus {
   outline: 2px solid #16a07d;
   outline-offset: 2px;
 }
 
+/* Align title and description text */
 #contato h2,
 #contato p {
   text-align: left;
 }
 
-.contact-form select {
-  width: 100%;
-  padding: 0.8rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
-  background-color: #fff;
+/* ===========================
+   CONTACT PAGE LAYOUT (image + form)
+   =========================== */
+
+/* Layout wrapper */
+.contato-wrapper {
+  display: flex;
+  flex-wrap: nowrap; /* impede quebra de linha no desktop */
+  align-items: stretch; /* força que os filhos tenham mesma altura */
+  gap: 2rem;
+  max-width: 1100px;
+  margin: auto;
 }
 
+/* Contact image container */
+.contato-imagem {
+  flex: 1;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.contato-imagem img {
+  width: 100%;
+  height: 100%;              /* ⚠️ força imagem a ocupar toda altura do container */
+  object-fit: cover;         /* mantém proporção sem distorção */
+  object-position: center;
+  display: block;
+}
+
+/* Form block beside the image */
+.contato-formulario {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contato-formulario h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #111;
+}
+
+.contato-formulario p {
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+/* WhatsApp link spacing */
+.contato-whatsapp {
+  margin-top: 1rem;
+}
+
+/* Responsive fallback for mobile view */
+@media (max-width: 768px) {
+  .contato-wrapper {
+    flex-direction: column;
+  }
+    .contato-imagem img {
+    height: auto; /* deixa a imagem fluir normalmente no mobile */
+  }
+}
 
 /* Centralize only hero text */
 .hero-overlay {
@@ -447,14 +572,17 @@ footer {
 .footer-container {
   max-width: 1000px;
   margin: auto;
+  padding: 2rem 1rem;
+  text-align: center;
 }
 
 .footer-contact {
+  margin-top: 0.3rem;
+  margin-bottom: 1.5rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1.5rem;
-  margin-top: 1rem;
 }
 
 .footer-link {
@@ -462,19 +590,18 @@ footer {
   align-items: center;
   gap: 0.5rem;
   color: #fff;
-  font-weight: 500;
-  text-decoration: none;
   background-color: #222;
   padding: 0.6rem 1rem;
   border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
   transition: background-color 0.3s ease;
 }
 
 .footer-link:hover {
-  background-color: #333;
+  background-color: #444;
 }
 
-.footer-link img {
-  width: 20px;
-  height: 20px;
+.footer-link svg {
+  flex-shrink: 0;
 }

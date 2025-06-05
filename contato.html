@@ -25,31 +25,66 @@
 
   <main>
     <section id="contato" data-aos="fade-up" data-aos-duration="800">
-      <h2>Fale com a gente</h2>
-      <p>Preencha o formulário abaixo ou entre em contato diretamente pelo WhatsApp.</p>
+    <div class="contato-wrapper">
+        
+        <!-- Imagem ilustrativa -->
+        <div class="contato-imagem">
+        <img src="assets/img/contato.jpg" alt="Equipe OMNI em ação">
+        </div>
 
-      <form class="contact-form" id="omniForm">
-        <input type="text" name="_gotcha" style="display: none" />
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required />
+        <!-- Formulário -->
+        <div class="contato-formulario">
+        <h2>Fale com a gente</h2>
 
-        <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" required />
+        <form class="contact-form" id="omniForm">
+            <input type="text" name="_gotcha" style="display: none" />
 
-        <label for="mensagem">Mensagem:</label>
-        <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required />
 
-        <button type="submit">Enviar</button>
-      </form>
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" required />
 
-      <p>Ou, se preferir, fale direto no <a href="https://wa.me/5569992282458" target="_blank">WhatsApp</a>.</p>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="servico">Serviço:</label>
+            <select id="servico" name="servico" required>
+            <option value="" disabled selected>Selecione um serviço</option>
+            <option value="video">Produção de Vídeo</option>
+            <option value="fotografia">Fotografia</option>
+            <option value="musica">Gravação Musical</option>
+            <option value="evento">Produção ou Cobertura de Evento</option>
+            <option value="outro">Outro</option>
+            </select>
+
+            <label for="mensagem">Conte-nos um pouco mais (opcional):</label>
+            <textarea id="mensagem" name="mensagem" rows="5"></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+
+        <p class="contato-whatsapp">Ou fale direto com a gente no <a href="https://wa.me/5569992282458" target="_blank">WhatsApp</a>.</p>
+        </div>
+    </div>
     </section>
+
   </main>
 
   <footer>
     <p>© 2025 OMNI Audiovisual. Todos os direitos reservados.</p>
   </footer>
 
-  <script src="scripts/main.js"></script>
+<!-- Scripts -->
+<script src="scripts/main.js"></script>
+<script src="https://unpkg.com/inputmask@5.0.8/dist/inputmask.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        Inputmask({ 
+            mask: "(99) 99999-9999", 
+            showMaskOnHover: false 
+        }).mask("#telefone");
+        });
+</script>
 </body>
 </html>
