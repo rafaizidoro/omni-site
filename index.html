@@ -26,7 +26,7 @@
   <!-- Header -->
   <header>
     <div class="container">
-      <h1 class="logo">OMNI Produtora Cultural</h1>
+      <h1>OMNI Produtora Cultural</h1>
 
       <button class="hamburger" id="hamburger">&#9776;</button>
       
@@ -35,7 +35,7 @@
           <li><a href="#home">Início</a></li>
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#portfolio">Portfólio</a></li>
-          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#services">Serviços</a></li>
           <li><a href="contato.html">Contato</a></li>
         </ul>
       </nav>
@@ -64,18 +64,32 @@
 
     <!-- Sobre Section-->
     <section id="sobre" data-aos="fade-right" data-aos-duration="800">
-      <h2>Sobre a OMNI</h2>
-      <p>A OMNI é uma produtora audiovisual independente com sede em Porto Velho (RO), especializada em conteúdos artísticos e culturais. Unimos criatividade e qualidade técnica com propósito.</p>
-      
-      <h3>Equipe</h3>
-      <p>Formada por artistas, fotógrafos, cineastas e técnicos apaixonados por audiovisual. A OMNI acredita na colaboração como essência da criação.</p>
-       
+      <div class="sobre-container">
+
+        <!-- Imagem da equipe -->
+        <div class="sobre-imagem">
+          <img src="assets/img/equipe.jpg" alt="Equipe OMNI reunida" />
+        </div>
+
+        <!-- Texto institucional -->
+        <div class="sobre-texto">
+          <h2 class="section-title"><span>SOBRE</span> NÓS</h2>
+
+          <p>Há 12 anos, atuamos com excelência e profissionalismo no mercado audiovisual, com mais de <strong>5.000 jobs realizados</strong> com sucesso ao longo dessa trajetória.</p>
+
+          <p>Nosso time é formado por <strong class="destaque">criadores de conteúdo apaixonados</strong>, prontos para transformar ideias em experiências visuais marcantes.</p>
+
+          <p>Trabalhamos com filmagens, transmissões ao vivo, fotografia, captação musical, edição, motion graphics, drone, direção criativa e muito mais.</p>
+
+          <p>Do planejamento à entrega, nossa missão é sempre buscar <strong>a melhor solução</strong> para cada cliente e cada projeto.</p>
+      </div>
+
     </section>
 
     <!-- Portfolio Section-->
     <section id="portfolio" data-aos="fade-up" data-aos-duration="800">
-      <h2>Portfólio</h2>
-      <p>Conheça alguns dos nossos projetos mais recentes:</p>
+      <h2 class="section-title">Nosso <span>Portfólio</span></h2>
+      <h3>Conheça alguns dos nossos projetos</h3>
 
       <div class="portfolio-grid">
 
@@ -136,32 +150,30 @@
       </div>
     </section>
 
-
-
     <!-- Serviços Section -->
-    <section id="servicos" data-aos="fade-up" data-aos-duration="800">
-      <h2>O que fazemos</h2>
-      <p>Conheça os principais serviços oferecidos pela OMNI:</p>
+    <section id="services" data-aos="fade-up" data-aos-duration="800">
+      <h2 class="section-title">O que <span>fazemos</span></h2>
+      <h3>Conheça os principais serviços oferecidos pela OMNI</h3>
 
       <div class="services-grid-cards">
 
-        <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
+        <div class="services-card" data-aos="zoom-in" data-aos-delay="100">
           <h3>🎬 Produção de Vídeo</h3>
           <p>Roteiro, filmagem e edição de vídeos musicais, documentais, institucionais e artísticos.</p>
         </div>
 
-        <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
+        <div class="services-card" data-aos="zoom-in" data-aos-delay="200">
           <h3>📷 Fotografia</h3>
           <p>Ensaios autorais, cobertura de eventos, fotografia de produto e retratos profissionais.</p>
         </div>
 
-        <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
+        <div class="services-card" data-aos="zoom-in" data-aos-delay="300">
           <h3>🎧 Gravação Musical</h3>
           <p>Captação, mixagem e masterização de músicas, trilhas sonoras e peças audiovisuais.</p>
         </div>
 
-        <div class="service-card" data-aos="zoom-in" data-aos-delay="400">
-          <h3>🎤 Produção ou Cobertura de Evento</h3>
+        <div class="services-card" data-aos="zoom-in" data-aos-delay="400">
+          <h3>🎤 Produção e Cobertura de Eventos</h3>
           <p>Registro audiovisual e suporte técnico para eventos culturais, sociais ou corporativos.</p>
         </div>
 
@@ -171,36 +183,28 @@
 
   </main>
 
-  <!-- Footer -->
 <footer>
   <div class="footer-container">
-    <div class="footer-contact">
-      <!-- WhatsApp -->
-      <a href="https://wa.me/5569992282458" target="_blank" class="footer-link" aria-label="WhatsApp">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M20.52 3.48A11.95 11.95 0 0 0 12 0C5.4 0 0 5.4 0 12c0 2.12.55 4.16 1.6 5.96L0 24l6.28-1.64A11.94 11.94 0 0 0 12 24c6.6 0 12-5.4 12-12 0-3.2-1.25-6.25-3.48-8.52zM12 22c-1.8 0-3.52-.5-5.04-1.44l-.36-.24-3.72.96.96-3.6-.24-.36A9.98 9.98 0 0 1 2 12c0-5.52 4.48-10 10-10s10 4.48 10 10-4.48 10-10 10zm5.24-6.76c-.28-.12-1.64-.8-1.88-.88-.24-.08-.4-.12-.56.12s-.64.76-.8.92c-.16.16-.28.2-.52.08a7.92 7.92 0 0 1-3.64-3.16c-.2-.36.2-.32.56-.96.08-.16.04-.28-.04-.4s-.48-1.16-.68-1.6c-.2-.48-.4-.4-.56-.4h-.48c-.16 0-.4.08-.64.36s-.84.8-.84 1.96.6 2.28.68 2.44c.08.16 1.2 1.96 3 2.72 1.2.52 1.68.56 2.08.48.32-.04 1-.4 1.12-.8.12-.4.12-.76.08-.84-.04-.08-.16-.12-.44-.24z"/>
-        </svg>
-        (69) 99228-2458
-      </a>
-
-      <!-- Instagram -->
-      <a href="https://instagram.com/omniprodutora" target="_blank" class="footer-link" aria-label="Instagram">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3h10zM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2c1.66 0 3 1.34 3 3s-1.34 3-3 3a3 3 0 1 1 0-6zm4.5-2a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-        </svg>
-        @omniprodutora
-      </a>
-
-      <!-- Email -->
-      <a href="mailto:contato@omnipro.com.br" class="footer-link" aria-label="E-mail">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 13.5L0 6.75V20a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2V6.75L12 13.5z"/>
-          <path d="M12 11L0 4h24L12 11z"/>
-        </svg>
-        omniprod@gmail.com
-      </a>
+    <!-- Coluna 1: Contato -->
+    <div class="footer-col-left">
+      <p class="footer-text">Fala com a gente</p>
+      <div class="footer-contact">
+        <a href="https://wa.me/5569992282458" target="_blank" class="footer-link" data-emoji="📞">(69) 99228-2458</a>
+        <a href="https://instagram.com/omniprodutora" target="_blank" class="footer-link" data-emoji="📸">@omniprodutora</a>
+        <a href="mailto:contato@omnipro.com.br" class="footer-link" data-emoji="📧">omniprod@gmail.com</a>
+      </div>
     </div>
-    <p>© 2025 OMNI Produtora. Todos os direitos reservados.</p>
+
+    <!-- Coluna 2: Logo -->
+    <div class="footer-col-center">
+      <img src="assets/img/logo-omni.png" alt="OMNI Produtora Cultural" class="footer-logo" />
+    </div>
+
+    <!-- Coluna 3: CNPJ + Endereço -->
+    <div class="footer-col-right">
+      <p class="footer-cnpj">CNPJ: 00.000.000/0000-00</p>
+      <p class="footer-address">Rua José Camacho, 1157 - Olaria<br>Porto Velho - RO, Amazônia, Brasil</p>
+    </div>
   </div>
 </footer>
 
