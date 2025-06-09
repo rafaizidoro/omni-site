@@ -213,7 +213,7 @@ textarea:focus {
   box-shadow:
     inset 0 25px 30px -10px rgba(0,0,0,0.8),  /* sombra no topo */
     inset 0 -15px 20px -5px rgba(0,0,0,0.6);; /* sombra na base */
-  padding: 5rem 1.5rem 4rem 1.5rem;
+  padding: 5rem 1.5rem 2rem 1.5rem;
   position: relative;
   overflow: hidden;
   text-align: left;
@@ -886,6 +886,7 @@ footer {
   .nav-links {
     display: none;
     flex-direction: column;
+    align-items: center;
     background-color: #111;
     width: 100%;
     position: absolute;
@@ -903,6 +904,10 @@ footer {
     display: block;
   }
 }
+
+  .hide-on-mobile {
+    display: none;
+  }
 
 @media (max-width: 768px) {
   header {
@@ -935,25 +940,15 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .sobre-container {
-    flex-direction: column;
-    gap: 1.5rem; /* menor que o atual */
-  }
 
-  .sobre-texto {
-    margin-top: -1rem; /* ajusta o bloco de texto */
-  }
-
-  .sobre-imagem img {
-    margin-bottom: 0.5rem;
-  }
-}
-
-@media (max-width: 768px) {
   .sobre-container {
     flex-direction: column;
     gap: 1rem; /* reduz o espaço entre os elementos */
   }
+
+  .sobre-imagem {
+  flex: 0 1 auto;
+}
 
   .sobre-imagem img {
     margin-bottom: 0.5rem; /* reduz o espaçamento abaixo da imagem */
@@ -961,6 +956,8 @@ footer {
 
   .sobre-texto {
     margin-top: 0; /* evita espaçamento extra antes do texto */
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
 
   #sobre .section-title {
@@ -969,3 +966,19 @@ footer {
   }
 }
 
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo-container {
+    margin: 0; /* Garante que não há margem lateral */
+  }
+
+  .hamburger {
+    display: block;
+    margin-left: auto; /* Empurra para a direita */
+  }
+}
