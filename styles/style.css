@@ -761,3 +761,190 @@ footer {
   }
 }
 
+/* ==== Responsividade: Tablets e Celulares ==== */
+
+/* Tablets (entre 768px e 1023px) */
+@media (max-width: 1023px) and (min-width: 769px) {
+  .portfolio-grid,
+  .services-grid,
+  .services-grid-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Smartphones (até 768px) */
+@media (max-width: 768px) {
+  /* Grades */
+  .portfolio-grid,
+  .services-grid,
+  .services-grid-cards {
+    grid-template-columns: 1fr;
+  }
+
+  /* Tipografia */
+  h2.section-title {
+    font-size: 2.2rem;
+  }
+
+  .sobre-texto p {
+    font-size: 1rem;
+  }
+
+  .services-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .services-card p {
+    font-size: 0.8rem;
+  }
+
+  .portfolio-item h4 {
+    font-size: 1rem;
+  }
+
+  /* Layout sobre */
+  .sobre-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .sobre-texto {
+    text-align: justify;
+  }
+
+  .sobre-imagem {
+    margin-bottom: 1.5rem;
+  }
+
+  /* Hero */
+  .hero-overlay {
+    padding: 2rem 1rem;
+  }
+
+  .background-video {
+    object-position: center top;
+  }
+
+  .hero-logo {
+    max-width: 240px;
+    margin-bottom: 1rem;
+  }
+
+  .hero-overlay .btn {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  /* Espaçamento geral */
+  section {
+    padding: 2.5rem 1rem;
+  }
+
+  #sobre {
+    padding: 3rem 1rem;
+  }
+
+  main section {
+    margin-bottom: 2rem;
+  }
+
+  /* Footer */
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-col-left,
+  .footer-col-center,
+  .footer-col-right {
+    flex: 1 1 100%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-contact {
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .footer-link {
+    margin: 0 auto;
+  }
+
+  /* Contato */
+  .contato-wrapper {
+    flex-direction: column;
+  }
+
+  .contato-imagem img {
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #111;
+    width: 100%;
+    position: absolute;
+    top: 100%; /* ajusta abaixo do header */
+    left: 0;
+    z-index: 99;
+    padding: 1rem;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 0.5rem 0;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .logo-container {
+    width: 140px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.5rem !important; /* sobre, portfolio etc */
+  }
+
+  #portfolio .section-title,
+  #sobre .section-title {
+    font-size: 2.2rem !important;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .sobre-container {
+    flex-direction: column;
+    gap: 1.5rem; /* menor que o atual */
+  }
+
+  .sobre-texto {
+    margin-top: -1rem; /* ajusta o bloco de texto */
+  }
+
+  .sobre-imagem img {
+    margin-bottom: 0.5rem;
+  }
+}
