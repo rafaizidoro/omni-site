@@ -948,3 +948,24 @@ footer {
     margin-bottom: 0.5rem;
   }
 }
+
+@media (max-width: 768px) {
+  .sobre-container {
+    flex-direction: column;
+    gap: 1rem; /* reduz o espaço entre os elementos */
+  }
+
+  .sobre-imagem img {
+    margin-bottom: 0.5rem; /* reduz o espaçamento abaixo da imagem */
+  }
+
+  .sobre-texto {
+    margin-top: 0; /* evita espaçamento extra antes do texto */
+  }
+
+  #sobre .section-title {
+    margin-top: 0;
+    font-size: 2rem; /* reduz o tamanho do título para mobile */
+  }
+}
+
