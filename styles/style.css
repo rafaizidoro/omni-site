@@ -234,6 +234,7 @@ textarea:focus {
   padding: 0.1rem 0.4rem;
   font-weight: 800;
 }
+
 .sobre-container {
   max-width: 1200px;
   margin: auto;
@@ -754,8 +755,6 @@ footer {
     font-size: 1.2rem;
   }
 
-  
-
   h3 {
     font-size: 1.2rem;
   }
@@ -769,7 +768,7 @@ footer {
   }
 
   #services h3 {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     text-align: center;
     color:#24c7a1;
   }
@@ -779,6 +778,27 @@ footer {
 
   .sobre-texto p {
     font-size: 1rem;
+  }
+
+  #services {
+  background-color: #0fbd91;
+  }
+
+  #services .section-title {
+  font-weight: 800;
+  padding-top: 2rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  color: #000000;
+  position: relative;
+  text-align: center;
+  }
+
+  #services .section-title span {
+  background: #000000;
+  color: #ffffff;
+  padding: 0.1rem 0.4rem;
+  font-weight: 800;
   }
 
   /* Layout sobre */
@@ -849,20 +869,26 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1rem;
+    padding: 0rem;
     flex-wrap: nowrap;
+    height: 60px;
   }
 
   .logo-container {
+    display: flex;
     width: 140px;
     height: 60px;
     flex-shrink: 0;
     margin: 0;
+    align-items: center;
   }
 
   .hamburger {
+    align-self: center;
     display: block;
     margin-left: auto;
+    padding: 0rem;
+    height: 100%;
   }
 
   /* Menu Mobile */
