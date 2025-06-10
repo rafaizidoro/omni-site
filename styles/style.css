@@ -43,7 +43,7 @@ a:hover {
 
 /* Header */
 header {
-  background-color: #111;
+  background-color: #1d1d1d;
   color: #fff;
   padding: 1rem 0rem 0rem 0rem;
   position: sticky;
@@ -409,7 +409,7 @@ textarea:focus {
 
 /* ==== Portfolio Card ==== */
 .portfolio-card {
-  background-color: #111;
+  background-color: #2e2e2e;
   border: 1px solid #222;
   border-radius: 12px;
   padding: 1.5rem;
