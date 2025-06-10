@@ -555,7 +555,6 @@ textarea:focus {
   margin-top: 1rem;
 }
 
-
 /* Lightbox Modal */
 .lightbox-modal {
   display: none;
@@ -569,18 +568,45 @@ textarea:focus {
   justify-content: center;
   align-items: center;
   transition: opacity 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .lightbox-modal.active {
   display: flex;
+  opacity: 1;
+  pointer-events: auto;
 }
 
+/* Container dinâmico: ajusta imagem ou vídeo */
 .lightbox-media {
-  max-width: 90%;
-  max-height: 90%;
+  width: 90vw;
+  max-width: 960px;
   box-shadow: 0 0 10px #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
 }
 
+/* Estilo para vídeos */
+.lightbox-media iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: none;
+  display: block;
+}
+
+/* Estilo para imagens */
+.lightbox-media img {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  display: block;
+}
+
+/* Botão de fechar */
 .lightbox-close {
   position: absolute;
   top: 1rem;

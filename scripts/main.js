@@ -65,48 +65,66 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   
 
-  // ====== Lightbox Modal ======
-  const lightboxModal = document.getElementById("lightbox-modal");
-  const lightboxMedia = document.querySelector(".lightbox-media");
-  const closeBtn = document.querySelector(".lightbox-close");
-  const triggers = document.querySelectorAll(".lightbox-trigger");
+// ====== Lightbox Modal ======
+const lightboxModal = document.getElementById("lightbox-modal");
+const lightboxMedia = document.querySelector(".lightbox-media");
+const closeBtn = document.querySelector(".lightbox-close");
+const triggers = document.querySelectorAll(".lightbox-trigger");
 
-  // ✅ Utility function to close lightbox
-  function closeLightbox() {
-    lightboxModal.classList.remove("active");
-    lightboxModal.setAttribute("aria-hidden", "true");
-    lightboxMedia.setAttribute("src", "");
-  }
+// ✅ Utility function to close lightbox
+function closeLightbox() {
+  lightboxModal.classList.remove("active");
+  lightboxModal.setAttribute("aria-hidden", "true");
+  lightboxMedia.innerHTML = ""; // Remove conteúdo (img ou iframe)
+}
 
-  if (lightboxModal && lightboxMedia && closeBtn && triggers.length > 0) {
-    triggers.forEach(trigger => {
-      trigger.addEventListener("click", (e) => {
-        e.preventDefault();
-        const src = trigger.getAttribute("data-media");
-        const alt = trigger.querySelector("img")?.getAttribute("alt") || "Imagem ampliada";
+if (lightboxModal && lightboxMedia && closeBtn && triggers.length > 0) {
+  triggers.forEach(trigger => {
+    trigger.addEventListener("click", (e) => {
+      e.preventDefault();
+      const src = trigger.getAttribute("data-media");
+      const type = trigger.getAttribute("data-type") || "image";
+      const alt = trigger.querySelector("img")?.getAttribute("alt") || "Conteúdo ampliado";
 
-        lightboxMedia.setAttribute("src", src);
-        lightboxMedia.setAttribute("alt", alt);
-        lightboxModal.classList.add("active");
-        lightboxModal.setAttribute("aria-hidden", "false");
-      });
-    });
+      let mediaContent = "";
 
-    // ✅ Use utility function on all lightbox close events
-    closeBtn.addEventListener("click", closeLightbox);
-
-    lightboxModal.addEventListener("click", (e) => {
-      if (e.target === lightboxModal) {
-        closeLightbox();
+      if (type === "youtube") {
+        // ✅ Inserir vídeo com autoplay
+        mediaContent = `
+          <iframe src="${src}?autoplay=1" 
+                  frameborder="0" 
+                  allow="autoplay; encrypted-media" 
+                  allowfullscreen 
+                  title="${alt}">
+          </iframe>
+        `;
+      } else {
+        // ✅ Inserir imagem normal
+        mediaContent = `<img src="${src}" alt="${alt}" />`;
       }
-    });
 
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && lightboxModal.classList.contains("active")) {
-        closeLightbox();
-      }
+      lightboxMedia.innerHTML = mediaContent;
+      lightboxModal.classList.add("active");
+      lightboxModal.setAttribute("aria-hidden", "false");
     });
-  }
+  });
+
+  // ✅ Use utility function on all lightbox close events
+  closeBtn.addEventListener("click", closeLightbox);
+
+  lightboxModal.addEventListener("click", (e) => {
+    if (e.target === lightboxModal) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && lightboxModal.classList.contains("active")) {
+      closeLightbox();
+    }
+  });
+}
+
 
   // ====== Highlight Navbar Section While Scrolling ======
   const sections = document.querySelectorAll("main section");
