@@ -26,9 +26,9 @@
   <!-- Header -->
   <header>
     <div class="container">
-      <div class="logo-container">
-        <img src="assets/img/letter-omni.png" alt="OMNI Produtora Cultural"/>      
-      </div>
+      <a href="index.html" class="logo-container">
+      <img src="assets/img/letter-omni.png" alt="OMNI Produtora Cultural" />
+      </a>
 
       <button class="hamburger" id="hamburger">&#9776;</button>
       
@@ -223,6 +223,14 @@
   });
   </script>
 
+  <!-- AOS init script (adicione no final do body) -->
+  <script>
+    AOS.init({
+      duration: window.innerWidth < 768 ? 400 : 800, // mais rápido no mobile
+      once: true
+    });
+  </script>
+  
   <!-- WhatsApp Button -->
   <a href="https://wa.me/5569992282458" class="whatsapp-float" target="_blank" aria-label="Fale conosco pelo WhatsApp">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28" fill="white">
